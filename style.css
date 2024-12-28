@@ -10,6 +10,9 @@ ExtraBold 800
 общие стили
 -------------*/
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -20,10 +23,6 @@ body {
     font-size: 20px;
     line-height: 1.5;
     letter-spacing: -0.5px;
-
- img {
-   max-width: 100%;
- }
 
 }
 
@@ -52,6 +51,7 @@ a:hover {
 
 .logo {
     font-weight: 800;
+
     display: flex;
     align-items: center;
     gap: 10px;
@@ -90,12 +90,15 @@ a:hover {
      width: 21px;
      height: 21px;
  
-     background-image: url("images/mail.svg");
+     background-image: url("./images/mail.svg");
      background-size: contain;
      background-position: center;
      background-repeat: no-repeat;
  }
 
+ .burger-menu {
+  display: none;
+}
   /*------------
      header
 -------------*/
@@ -103,7 +106,7 @@ a:hover {
 .header {
     padding: 20px 0;
     backdrop-filter: blur(10px);
-    background: rgba(50, 50, 50, 0.7);
+    background: rgba(181, 178, 178, 0.7);
 }
 
 .header .container {
@@ -126,10 +129,6 @@ a:hover {
      main
 -------------*/
 
-.main {
-
-}
-
 
   /*------------
      welcome
@@ -147,12 +146,8 @@ a:hover {
    
 }
 
-.welcome_desc {
-
-}
-
 .welcome_title {
-   width: 600px;
+   width: 500px;
    margin-bottom: 24px;
    margin-top: 0;
 
@@ -168,9 +163,6 @@ a:hover {
    margin-bottom: 88px;
 }
 
-.welcome_btn {
-
-}
 
 .welccome_img {
    width: 400px;
@@ -192,32 +184,23 @@ a:hover {
   margin-top: 143px;
 }
 
-.container {
-
-}
-
 .works_btn {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 0;
-    margin-bottom: 88px;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin-bottom: 80px;
 
-   background-color: transparent;
-   border: none;
-   font-family: 'Manrope';
-   font-weight: 700;
-   font-size: 16px;
-   letter-spacing: 1.5px;
-   text-transform: uppercase;
-
-   color: #dedede;
-
-   opacity: 0.7;
-}
-
-.works_icon {
-
+  font-family: 'Manrope';
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #DEDEDE;
+  
+  background-color: transparent;
+  border: none;
+  opacity: 0.7;
 }
 
 .works_wrapper {
@@ -228,12 +211,13 @@ a:hover {
 }
 
 .work {
-  height: 700px;
+  height: 888px;
+  /* height: 700px; */
   position: relative;
 }
 
-.work:nth-child(even) {
-   position: relative;
+.work:nth-child(old) {
+   /* position: relative; */
    margin-top: -140px;
 }
 
@@ -312,7 +296,7 @@ a:hover {
 
 
 .contact {
-   margin-top: 200px;
+   /* margin-top: 200px; */
    margin-bottom: 120px;
 }
 
@@ -328,10 +312,6 @@ a:hover {
 .contact_text {
     margin-bottom: 50px;
    font-size: 26px;
-}
-
-.btn {
-  
 }
 
   /*------------
@@ -363,13 +343,10 @@ a:hover {
   gap: 40px;
 }
 
-.socials_link {
 
-}
-
-.socials_img {
+/* .socials_img {
   display: flex;
-} 
+}  */
 
 
   /*------------
@@ -383,6 +360,11 @@ a:hover {
 }
 
 @media (max-width: 950px) {
+
+  .welcome {
+    margin-top: 70px;
+  }
+
   .welcome .container { 
    flex-direction: column-reverse;
    gap: 65px;
@@ -401,6 +383,10 @@ a:hover {
   .work {
     height: 600px;
   }
+
+  .work__name {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 850px){
@@ -408,6 +394,7 @@ a:hover {
     height: 300px;
     width: 300px;
   }
+
   .works, .projects, .contact {
     margin-top: 100px;
   } 
@@ -424,8 +411,57 @@ a:hover {
     flex-direction: column-reverse;
     align-items: center;
     gap: 35px;
-
   }
+
+  .logo {
+    width: 80px;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(181, 178, 178, 0.9);
+  }
+
+  .burger-menu {
+    display: block;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+
+    position: absolute;
+    top: 29px;
+    right: 15px;
+  }
+  
+  .burger-menu__icon {
+    height: 24px;
+    width: 30px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .header_nav {
+    display: none;
+  }
+
+  .header.header--mobile .header_nav {
+    display: flex;
+    /* flex-direction: column; */
+    /* gap: 20px; */
+    align-self: center;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    justify-content: center;
+  }
+
+  .header.header--mobile .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
 }
 
 @media (max-width: 650px) {
@@ -447,10 +483,7 @@ a:hover {
 }
 
 @media (max-width: 500px) {
-  .header_nav{
-    display: none;
-  }
-
+  
   .welccome_img {
     width: 240px;
     height: 240px;
@@ -494,6 +527,6 @@ a:hover {
 
 @media (max-width: 420px) {
   .welcome_title {
-   font-size: 18px ;
+   font-size: 26px ;
   }
 }
