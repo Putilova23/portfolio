@@ -104,6 +104,9 @@ a:hover {
 -------------*/
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     padding: 20px 0;
     backdrop-filter: blur(10px);
     background: rgba(181, 178, 178, 0.7);
@@ -448,8 +451,6 @@ a:hover {
 
   .header.header--mobile .header_nav {
     display: flex;
-    /* flex-direction: column; */
-    /* gap: 20px; */
     align-self: center;
     flex-wrap: wrap;
     gap: 20px 30px;
